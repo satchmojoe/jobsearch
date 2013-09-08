@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company:</b>
+  <%= link_to @company.name, @company %>
+</p>
+
+<p>
+  <b>Details:</b>
+  <%= @note.details %>
+</p>
+
+
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Back', notes_path %>
+<%= link_to 'Companies', companies_path %>

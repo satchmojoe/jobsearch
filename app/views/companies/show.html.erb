@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @company.name %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @company.contact %>
+</p>
+
+<p>
+  <b>Employeecount:</b>
+  <%= @company.employeeCount %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <br>
+  <% @notes.each do |note| %>
+    <%= note.updated_at.to_s + ": " + note.details %>
+    <br>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
+<%= link_to 'New Note', new_note_path(:company_id => @company.id) %>
+<%= link_to 'New Company', new_company_path %>
+<%= link_to 'Companies', companies_path %>
+
